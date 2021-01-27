@@ -1,0 +1,7 @@
+<!--pages/find/find.wxml-->
+<text>Would you wanna find something else?</text>
+<view>
+  <block wx:for="{{cards}}">
+       <my-card></my-card>
+  </block>
+</view>
