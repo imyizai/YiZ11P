@@ -69,7 +69,7 @@ Page({
       //"picUrl":"http://p3.music.126.net/pv2ya6nRsD0WD1TK4BybQg==/109951165216270090.jpg?//////////param=140y140"
     //}]
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -109,14 +109,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      playlist:[]
+    })
+    this._getPlaylist()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom:function(){
+    this._getPlaylist()
   },
 
   /**
@@ -128,12 +131,18 @@ Page({
           title: '加载中',
         })
         wx.cloud.callFunction({
-          name:'playlist'
+          name:'music',
+          data: {
+            start:this.data.playlist.length,
+            count:MAX_LIMIT,
+            $url: 'playlist'
+          }
         }).then((res) =>{
           console.log(res)
            this.setData({
-             playlist: res.result
+             playlist: this.data.playlist.concat(res.result.data)
            })
+           wx.stopPullDownRefresh()
            wx.hideLoading()
         })
      },
