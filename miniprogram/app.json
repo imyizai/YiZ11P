@@ -3,11 +3,13 @@
     "pages/music/music",
     "pages/find/find",
     "pages/profile/profile",
+    "pages/musiclist/musiclist",
     "pages/test/test"
+    
   ],
-  "requiredBackgroundModes":[
+  "requiredBackgroundModes": [
     "audio"
-  ], 
+  ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
@@ -25,9 +27,9 @@
         "iconPath": "images/music.png",
         "selectedIconPath": "images/music-actived.png"
       },
-      { 
+      {
         "pagePath": "pages/find/find",
-        "text": "Discover", 
+        "text": "Discover",
         "iconPath": "images/find.png",
         "selectedIconPath": "images/find-actived.png"
       },
@@ -38,7 +40,6 @@
         "selectedIconPath": "images/profile-actived.png"
       }
     ]
-
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
