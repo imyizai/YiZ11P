@@ -18,3 +18,11 @@
    z-index: -2;
    background-color: #222;
 }
+
+.iconfont{
+   color: #fefefe;
+}
+
+.icon-bofang{
+   font-size: 120rpx;
+}
