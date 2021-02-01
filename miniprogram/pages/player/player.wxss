@@ -111,7 +111,7 @@
 }
 .player-small{
    position: absolute;
-   bottom: 25%;
+   bottom: 30%;
    left: 50%;
    transform: translateX(-50%);
    display: flex;
