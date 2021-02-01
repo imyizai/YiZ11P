@@ -9,6 +9,10 @@
     <image class="player-img zhuan {{isPlaying?'':'ting'}}" 
     src="{{picUrl}}"></image>
   </view>
+  <!-- 进度条 -->
+  <view class="progress-bar">
+    <yz-progress-bar/>
+  </view>
 
   <!-- 控制面板 -->
   <view class="control">
@@ -16,4 +20,12 @@
     <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}" bind:tap="togglePlaying"></text>
     <text class="iconfont icon-xiayigexiayishou" bind:tap="onNext"></text>
   </view>
+</view>
+
+<view class="player-small">
+   <text class="iconfont icon-xihuan"></text>
+   <text class="iconfont icon-xiazai"></text>
+   <text class="iconfont icon-gechang"></text>
+   <text class="iconfont icon-pinglun-"></text>
+   <text class="iconfont icon-gengduo"></text>
 </view>

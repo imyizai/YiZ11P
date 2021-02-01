@@ -44,7 +44,7 @@
    position: absolute;
    top: -150rpx;
    left: 266rpx;
-   background: url('https://cloudmusicone.oss-cn-hangzhou.aliyuncs.com/xiaoweiba0.png') no-repeat center/contain;
+   background: url('https://cloudmusicone.oss-cn-hangzhou.aliyuncs.com/changzhen.png') no-repeat center/contain;
    transform:rotate(-15deg);
    transform-origin: 24rpx 10rpx;
    transition: transform 0.8s ease;
@@ -102,4 +102,26 @@
 .icon-bofang, .icon-zanting{
    font-size: 120rpx;
    margin: 0 50rpx;
+}
+
+.icon-xihuan,.icon-xiazai,.icon-gechang,.icon-pinglun-,.icon-gengduo{
+   font-size: 50rpx;
+   margin: 0 40rpx;
+   color: #cdcdcd;
+}
+.player-small{
+   position: absolute;
+   bottom: 25%;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   align-items: center;
+}
+
+.progress-bar{
+   width: 90%;
+   position: absolute;
+   left: 50%;
+   transform:translateX(-50%);
+   bottom:24%
 }
