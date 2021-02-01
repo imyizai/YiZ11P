@@ -9,9 +9,10 @@
     <image class="player-img zhuan {{isPlaying?'':'ting'}}" 
     src="{{picUrl}}"></image>
   </view>
+  
   <!-- 进度条 -->
   <view class="progress-bar">
-    <yz-progress-bar/>
+    <yz-progress-bar bind:musicEnd="onNext" />
   </view>
 
   <!-- 控制面板 -->

@@ -33,6 +33,26 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //滑动视图对象发生改变
+    onChange(event) {
+     console.log(event)
+     //判定事件源 （引起滑动变化的原因：有自身播放进度变化和拖动两种）
+     if (event.detail.source == 'touch'){
+       //根据当前位置计算出百分比
+       this.data.progress = event.detail.x / (movableAreaWidth - movableViewWidth ) * 100
+       this.data.distance = event.detail.x
+     }
+    },
+    onTouchEnd() {
+      const currentTimeFmt = this._timeFormat(Math.floor(backgroundAudioManager.currentTime))
+      this.setData({
+        progress: this.data.progress,
+        distance: this.data.distance,
+        ['showTime.currentTime']: currentTimeFmt.min + ':' + currentTimeFmt.sec
+      })
+      //定位歌曲播放位置
+      backgroundAudioManager.seek(duration * this.data.progress / 100)
+    },
     _getDistance(){
       const query = this.createSelectorQuery()
       query.select('.movable-area').boundingClientRect()
@@ -75,21 +95,27 @@ Component({
           //console.log('onTimeUpdate')
           const duration = backgroundAudioManager.duration
           const currentTime = backgroundAudioManager.currentTime
-          console.log(currentTime)
-          const currentTimeFmt = this._timeFormat(currentTime)
-          this.setData({
+          const sec = currentTime.toString().split('.')[0]
+          console.log(sec)
+          if (sec != currentSec) {
+            console.log(currentTime)
+            const currentTimeFmt = this._timeFormat(currentTime) 
+            this.setData({
             distance: (movableAreaWidth - movableViewWidth) * currentTime / duration,
             progress : currentTime / duration * 100,
             ['showTime.currentTime'] : `${currentTimeFmt.min}:${currentTimeFmt.sec}`
           })
+          currentSec = sec
+          }
         })
         backgroundAudioManager.onEnded(() => {
           console.log('onEnded')
+          this.triggerEvent('musicEnd')
         })
         backgroundAudioManager.onError(() => {
           console.log('onError')
           wx.showToast({
-            title: '发生错误' + resizeBy.errMsg,
+            title: '发生错误' + res.errMsg,
           })
         })
       },
