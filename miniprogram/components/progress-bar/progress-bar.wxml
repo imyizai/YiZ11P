@@ -2,9 +2,9 @@
   <text class="time">{{showTime.currentTime}}</text>
  <view class="control">
    <movable-area class="movable-area">
-     <movable-view class="movable-view" direction="horizontal" damping="1000" x="13.3"/>
+     <movable-view class="movable-view" direction="horizontal" damping="1000" x="{{distance}}"/>
    </movable-area>
-   <progress stroke-width="4" backgroundColor="#969696" activeColor="#fff" percent="30"></progress>
+   <progress stroke-width="4" backgroundColor="#969696" activeColor="#fff" percent="{{progress}}"></progress>
  </view>
   <text class="time">{{showTime.totalTime}}</text>
 </view>

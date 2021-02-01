@@ -16,15 +16,16 @@ Component({
    */
   data: {
      showTime:{
-       currentTime : '00:10',
-       totalTime : '03:00',
+       currentTime : '00:00',
+       totalTime : '00:00',
      },
-     distance : 13.3,
-     progress : 10
+     distance : 0,
+     progress : 0,
     },
     lifetimes : {
        ready(){
           this._bindBGMEvent()
+          this._getDistance()
        }
     },
 
@@ -32,6 +33,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _getDistance(){
+      const query = this.createSelectorQuery()
+      query.select('.movable-area').boundingClientRect()
+      query.select('.movable-view').boundingClientRect()
+      query.exec((rect) => {
+        console.log(rect)
+        movableAreaWidth = rect[0].width
+        movableViewWidth = rect[1].width
+      })
+    },
       _bindBGMEvent(){
         backgroundAudioManager.onPlay(() => {
           console.log('onPlay')
@@ -62,6 +73,15 @@ Component({
         })
         backgroundAudioManager.onTimeUpdate(() => {
           //console.log('onTimeUpdate')
+          const duration = backgroundAudioManager.duration
+          const currentTime = backgroundAudioManager.currentTime
+          console.log(currentTime)
+          const currentTimeFmt = this._timeFormat(currentTime)
+          this.setData({
+            distance: (movableAreaWidth - movableViewWidth) * currentTime / duration,
+            progress : currentTime / duration * 100,
+            ['showTime.currentTime'] : `${currentTimeFmt.min}:${currentTimeFmt.sec}`
+          })
         })
         backgroundAudioManager.onEnded(() => {
           console.log('onEnded')
