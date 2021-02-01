@@ -3,13 +3,12 @@ let movableViewWidth = 0 //移动元素的宽度
 const backgroundAudioManager = wx.getBackgroundAudioManager()
 let currentSec = -1 //当前的秒数
 let duration = 0  //歌曲总时长
+let isMoving = false // 表示当前进度条是否再拖拽，解决：当进度条拖动时和updatetime事件有冲突的问题
 Component({
   /**
    * 组件的属性列表
    */
-  properties: {
-
-  },
+  properties: {},
 
   /**
    * 组件的初始数据
@@ -35,12 +34,14 @@ Component({
   methods: {
     //滑动视图对象发生改变
     onChange(event) {
-     console.log(event)
+     //console.log(event)
      //判定事件源 （引起滑动变化的原因：有自身播放进度变化和拖动两种）
      if (event.detail.source == 'touch'){
        //根据当前位置计算出百分比
        this.data.progress = event.detail.x / (movableAreaWidth - movableViewWidth ) * 100
        this.data.distance = event.detail.x
+       isMoving = true
+       console.log('change',isMoving)
      }
     },
     onTouchEnd() {
@@ -52,6 +53,8 @@ Component({
       })
       //定位歌曲播放位置
       backgroundAudioManager.seek(duration * this.data.progress / 100)
+      isMoving = false
+      console.log('end',isMoving)
     },
     _getDistance(){
       const query = this.createSelectorQuery()
@@ -93,19 +96,21 @@ Component({
         })
         backgroundAudioManager.onTimeUpdate(() => {
           //console.log('onTimeUpdate')
+          if (!isMoving) {
           const duration = backgroundAudioManager.duration
           const currentTime = backgroundAudioManager.currentTime
           const sec = currentTime.toString().split('.')[0]
-          console.log(sec)
+          //console.log(sec)
           if (sec != currentSec) {
-            console.log(currentTime)
+            //console.log(currentTime)
             const currentTimeFmt = this._timeFormat(currentTime) 
             this.setData({
             distance: (movableAreaWidth - movableViewWidth) * currentTime / duration,
             progress : currentTime / duration * 100,
             ['showTime.currentTime'] : `${currentTimeFmt.min}:${currentTimeFmt.sec}`
-          })
+            })
           currentSec = sec
+            }
           }
         })
         backgroundAudioManager.onEnded(() => {
