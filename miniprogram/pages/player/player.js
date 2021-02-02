@@ -65,6 +65,24 @@ Page({
        isPlaying: true
      })
      wx.hideLoading()
+     //请求歌词
+     wx.cloud.callFunction({
+       name: 'music',
+       data: {
+         musicId,
+         $url: 'lyric',
+       }
+     }).then((res) => {
+       console.log(res)
+       let lyric = '暂无歌词'
+       const lrc = res.result.lrc
+       if (lrc) {
+         lyric = lrc.lyric 
+       }
+       this.setData({
+         lyric
+       })
+     })
    })
   },
   togglePlaying(){

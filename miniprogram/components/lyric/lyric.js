@@ -10,18 +10,45 @@ Component({
      },
      lyric:String,
   },
-
   /**
    * 组件的初始数据
    */
   data: {
+   lyrics: []
+  },
+  observers:{
+    lyric(lrc){
+       if (lrc === '暂无歌词') {
+         let _lyris =[]
+         this.setData({
+           lyrics : [
+             {
+                lrc,
 
+           }
+          ]
+         })
+       }else{
+         this._parseLyric(lrc)
+       }
+       console.log(lrc)
+    }
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+   _parseLyric(lyricSrc){
+     let lines = lyricSrc.split('\n')
+     let _lyris = []
+     lines.forEach((elem) =>{
+       const lrc = elem.split(']')[1]
+       _lyris.push(lrc)
+     })
+     this.setData({
+       lyrics : _lyris
+     })
+   }
   }
 })
