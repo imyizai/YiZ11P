@@ -11,7 +11,7 @@
   </view>
 
   <!-- 歌词 -->
-  <yz-lyric isLyricShow="{{isLyricShow}}" lyric="{{lyric}}" bind:tap="onLyricShow"></yz-lyric>
+  <yz-lyric class="lyric" isLyricShow="{{isLyricShow}}" lyric="{{lyric}}" bind:tap="onLyricShow"></yz-lyric>
   
   <!-- 进度条 -->
   <view class="progress-bar">
