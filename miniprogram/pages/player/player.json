@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-  "yz-progress-bar":"/components/progress-bar/progress-bar"
-}
+  "yz-progress-bar":"/components/progress-bar/progress-bar",
+  "yz-lyric" : "/components/lyric/lyric"
+  },
+  "disableScroll": true
 }

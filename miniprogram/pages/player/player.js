@@ -10,7 +10,11 @@ Page({
    */
   data: {
     picUrl:'',
-    isPlaying:false
+    isPlaying:false,
+    name:'',
+    singer:'',
+    isLyricShow: false,
+    lyric: '传给歌词组件的歌词',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -71,6 +75,11 @@ Page({
     }
     this.setData({
       isPlaying: !this.data.isPlaying
+    })
+  },
+  onLyricShow(){
+    this.setData({
+      isLyricShow: !this.data.isLyricShow
     })
   },
    onPrev(){
