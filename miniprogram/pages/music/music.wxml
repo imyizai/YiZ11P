@@ -12,4 +12,5 @@ interval="3000" duration="1000" class="swiper">
     <yz-playlist playlist="{{item}}"></yz-playlist>
   </block>
 </view>
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
 

@@ -1,1 +1,9 @@
 /* pages/profile/profile.wxss */
+.return{
+    margin-left: 50rpx;
+    margin-top: 60rpx;
+}
+
+/* .per{
+  
+} */

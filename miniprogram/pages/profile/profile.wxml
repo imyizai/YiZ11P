@@ -1,2 +1,37 @@
-<!--pages/profile/profile.wxml-->
-<text>Just be who you wanna be</text>
+
+<view class="container">
+   <view class='logo'>
+      <view class='return'>返回</view>
+      <view class='per'>个人信息</view>
+   </view>
+ 
+   <view class='percontent'>
+      <view class='photo'>
+         <view class='tphoto'>头像</view>
+         <view class="image">
+           <image class="tupian" style="width: 150rpx; height: 150rpx;" mode="{{item.mode}}" src="{{src}}"></image>
+         </view>
+      </view>
+      
+      <view class='name'>
+          <view class='name2'>用户名</view>
+          <view class='huoqu1'>{{student.classname}}</view>
+      </view>
+ 
+      <view class='sex'>
+        <view class='sex2'>昵称</view>
+        <view class='huoqu1'>{{student.name}}</view>
+      </view>
+ 
+      <view class='tel'>
+        <view class='tel2'>编号</view>
+        <view class='huoqu1'>{{student.no}}</view>
+      </view>
+ 
+      <view  class='area'>
+        <view class='area2'>VIP</view>
+        <view class='huoqu1'>{{student.departmentname}}</view>
+      </view>
+ 
+   </view>
+</view>

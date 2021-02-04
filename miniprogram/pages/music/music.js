@@ -1,12 +1,15 @@
 // pages/music/music.js
  const MAX_LIMIT = 15
  const db = wx.cloud.database()
+ const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+   
+     
    imgUrls:[{
      url:"http://p1.music.126.net/nVUH7O5ZNMG1OQ1kE-tq9g==/109951165665595417.jpg?imageView&quality=89"
     
@@ -32,49 +35,20 @@ Page({
     {
       url:"http://p1.music.126.net/SLfispSeeEnb6Ezs0cNjBw==/109951165666128356.jpg?imageView&quality=89"
     }],
-    playlist:[]
-    //playlist:[{
-     // "id":"1001",
-     //"playCount":622822.6,
-     //"picUrl":"http://p1.music.126.net/PiYyOOKQrA-MM3Dx6ExAxg==/109951164445288552.jpg?param=140y140"
-     //},
-    //{
-      //"id":"1002",
-      //"playCount":1286423.6,
-      //"name":"Sisorelcsoriak的歌单",
-      //"picUrl":"https://p1.music.126.net/vmQKokKn92ih3cnC5vh1vg==/3382097774669567.jpg?//////  ///param=140y140"
-     //},
-    //{
-     // "id":"1003",
-     // "playCount":473526.6,
-     // "name":"无论吃了多少瓜，依旧忠于自己热爱生活",
-     // "picUrl":"http://p1.music.126.net/oILIciXGa_33JWkk1MOtnA==/109951165650557478.jpg?//////////param=140y140"
-    //},
-     // {
-      //"id":"1004",
-     //"playCount":1128324.6,
-      //"name":"【一起吹晚风】",
-      //"picUrl":"http://p3.music.126.net/swKlj43m9puewJ-YboeoSg==/109951165325068849.jpg?//////param=140y140"
-    //},
-    //{
-     // "id":"1005",
-      //"playCount":1006791.6,
-      //"name":"你一定要在自己热爱的世界里闪闪发亮啊",
-      //"picUrl":"http://p3.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?//////////param=140y140"
-    //},
-    //{
-      //"id":"1006",
-     // "playCount":873146.6,
-     // "name":"放轻松 就当漫游地球 来和我一起听吧！",
-      //"picUrl":"http://p3.music.126.net/pv2ya6nRsD0WD1TK4BybQg==/109951165216270090.jpg?//////////param=140y140"
-    //}]
-  },
+   playlist:[],
+   
+  //组件参数设置，传递到组件
+   defaultData:{
+     title: 'Yi7Z11', //导航栏标题
+   }
+ },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
        this._getPlaylist()
+       console.log(this.data.height)
   },
 
   /**

@@ -1,5 +1,6 @@
 /* pages/music/music.wxss */
 .swiper{
+   margin-top: 150rpx;
    height: 340rpx;
 }
 .img{
@@ -28,3 +29,4 @@
    width: 0;
    height: 0;
 }
+

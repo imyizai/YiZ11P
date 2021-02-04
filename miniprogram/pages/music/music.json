@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "yz-playlist":"/components/playlist/playlist"
+    "yz-playlist":"/components/playlist/playlist",
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
   },
   "navigationBarTitleText":"YiZ11P",
   "enablePullDownRefresh":true

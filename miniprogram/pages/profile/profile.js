@@ -5,13 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+   src: '../../images/profile.png',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var student = wx.getStorageSync('student');
+    console.log(student);
+    this.setData({student: student});
 
   },
 
