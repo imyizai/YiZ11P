@@ -1,1 +1,9 @@
-/* pages/find/find.wxss */
+.header{
+  
+  margin-top: 175rpx;
+  display: flex;
+}
+.icon-bianji{
+  font-size: 65rpx;
+  
+}
