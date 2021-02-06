@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+     "yz-bottom-modal":"/components/bottom-modal/bottom-modal"
+  }
+}

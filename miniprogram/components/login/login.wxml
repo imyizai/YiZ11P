@@ -1,0 +1,12 @@
+<yz-bottom-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    获取微信授权信息</button>
+  </view>
+</yz-bottom-modal>
+<yz-bottom-modal modalShow="{{modalShow}}">
+  <view slot="modal-content">
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+     获取微信授权信息</button>
+  </view>
+</yz-bottom-modal>

@@ -5,5 +5,18 @@
 }
 .icon-bianji{
   font-size: 65rpx;
-  
+}
+
+.header .left{
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
 }

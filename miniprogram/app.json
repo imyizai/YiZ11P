@@ -5,13 +5,14 @@
     "pages/profile/profile",
     "pages/musiclist/musiclist",
     "pages/player/player",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/publish/publish"
   ],
   "requiredBackgroundModes": [
     "audio"
   ],
   "window": {
-    "navigationStyle": "custom"  
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#474747",

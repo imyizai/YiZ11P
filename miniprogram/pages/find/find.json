@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "yz-search":"/components/search/search"
-  },
-  "navigationBarTitleText":"Discover"
+    "yz-search":"/components/search/search",
+    "yz--login":"/components/login/login"
+  }
 }
