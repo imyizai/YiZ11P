@@ -82,6 +82,12 @@
           "pathName": "pages/find/find",
           "query": "playlistId=464260149",
           "scene": null
+        },
+        {
+          "name": "Publish",
+          "pathName": "pages/publish/publish",
+          "query": "nickName=毅仔&avatarUrl=https:thirdwx.qlogo.cn/mmopen/vi_32/DYAIOg",
+          "scene": null
         }
       ]
     }

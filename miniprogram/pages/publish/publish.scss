@@ -72,5 +72,25 @@
 }
 
 //底部操作区
-//.footer {
-//}
+.footer {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 40rpx;
+  background: #f1f1f1;
+
+.words-num {
+  flex:  1;
+  text-align: right;
+  color: #474747;
+  font-size: 32rpx;
+  padding-right: 40rpx;
+}
+.send-btn{
+  background: #A081AB;
+  color: #fff;
+  font-size: 28rpx;
+}
+}

@@ -47,4 +47,49 @@ Page({
       footerBottom: 10,
     })
   },
+  onChooseImage() {
+    //还能再选几张图片
+    let max = MAX_IMG_NUM - this.data.images.length
+    console.log(max)
+    wx.chooseImage({
+      count: max,
+      sizeType: ['original','compressed'],
+      sourceType: ['album','camera'],
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          images: this.data.images.concat(res.tempFilePaths)
+        })
+        //还能再选几张图片
+        max = MAX_IMG_NUM - this.data.images.length
+        console.log('>>>>' + max)
+        // 根据max的值决定是否显示选择图片的元素
+        this.setData({
+          selectPhoto: max <= 0 ? false : true
+        })
+      },
+    })
+  },
+  onPreviewImage(event) {
+    console.log(event)
+    wx.previewImage({
+      urls: this.data.images,
+      current: event.target.dataset.imgsrc,
+    })
+  },
+  onDelImage(event) {
+    console.log(evetn)
+    //注意js数组中的splic函数
+    this.data.images.splice(evetn.target.dataset.index, 1)
+    this.setData({
+      images: this.data.images
+    })
+    console.log(this.data.images.length)
+    //等于8， 就可以显示选择图片元素来
+    if (this.data.images.length === MAX_IMG_NUM - 1) {
+       this.setData({
+         selectPhoto: true,
+       })
+    }
+  },
 })
