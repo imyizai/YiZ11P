@@ -1,5 +1,5 @@
 <!-- 自定义导航 -->
-<navigation showIcon='{{false}}' title='发现'></navigation>
+<navigation-bar showIcon='{{false}}' title='发现'></navigation-bar>
 <!-- 顶部搜索区-->
 <view class="header">
   <view class="left" bind:tap="onPublish">

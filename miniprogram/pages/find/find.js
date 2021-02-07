@@ -38,7 +38,7 @@ Page({
    const detail = event.detail
    console.log(detail.nickName)
    wx.navigateTo({
-     url: '../publish/publish',
+     url: `../publish/publish?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`,
    })
   },
   onLoginFail(){
@@ -47,4 +47,9 @@ Page({
       content: '',
     })
   },
+  _loadBlogList(start = 0) {
+    wx.showLoading({
+      title:'拼命加载中',
+    })
+  }
 })
