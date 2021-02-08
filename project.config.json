@@ -10,7 +10,7 @@
     "minified": true,
     "newFeature": true,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -28,11 +28,11 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
+    "bundle": true,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
+    "userConfirmedBundleSwitch": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
@@ -86,7 +86,7 @@
         {
           "name": "Publish",
           "pathName": "pages/publish/publish",
-          "query": "nickName=毅仔&avatarUrl=https:thirdwx.qlogo.cn/mmopen/vi_32/DYAIOg",
+          "query": "nickName=CONCEPT&avatarUrl=https:thirdwx.qlogo.cn/mmopen/vi_32/DYAIOg",
           "scene": null
         }
       ]

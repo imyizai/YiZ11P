@@ -143,7 +143,7 @@ Page({
           resolve()
         },
         //失败的处理
-        fail: (res) => {
+        fail: (err) => {
           console.error(err)
           reject()
         }
@@ -161,7 +161,7 @@ Page({
       data: {
         ...userInfo, //使用延展操作符... 取得userInfo对象中的所有属性（昵称、头像）
         content,     //文字内容
-        img:fileIds, //文字id数组
+        imgs: fileIds, //文字id数组
         createTime: db.serverDate(), //服务端的时间
       }
     }).then((res) => {
@@ -170,6 +170,12 @@ Page({
       wx.showToast({
         title: '发布成功',
       })
+      //返回blog页面，并且刷新
+      wx.navigateBack()
+      const pages = getCurrentPages()
+      // 取到上一个页面
+      const prevPage = pages[pages.length - 2]
+      prevPage.onPullDownRefresh()
     })
     }).catch((err) => {
       wx.hideLoading()

@@ -1,20 +1,30 @@
 <!-- 自定义导航 -->
-<navigation-bar showIcon='{{false}}' title='发现'></navigation-bar>
-<!-- 顶部搜索区-->
+<navigation showIcon='{{false}}' title='发现'></navigation>
+
+<!-- 头部 -->
 <view class="header">
-  <view class="left" bind:tap="onPublish">
-    <!-- 左侧的发布图标-->
+  <view class="publish-container" bind:tap="onPublish">
     <i class="iconfont icon-bianji"></i>
   </view>
-  <view class="right">
-    <!-- 引入搜索组件，接受子组件回传的search方法 -->
-    <yz-search bind:search="onSearch" />
+  <view class="search-container">
+    <yz-search />
   </view>
 </view>
 
-<scroll-view class="container" scroll-y>
+<!-- 博客卡片列表 -->
+<view class="container">
+  <block wx:for="{{blogList}}" wx:key="_id">
+    <view class="blog-panel">
+      <yz-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment" />
+    </view>
+  </block>
+</view>
+
+
   <!-- 底部弹出层-->
-  <yz-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess"
-  bind:loginfail="onLoginFail">
-  </yz-login>
-</scroll-view>
+  <yz-login
+   modalShow="{{modalShow}}"
+   bind:loginsuccess="onLoginSuccess"
+   bind:loginfail="onLoginFail"
+   />
+  

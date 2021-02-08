@@ -1,0 +1,46 @@
+@import '../../global.scss';
+
+.header{
+  margin-top: 175rpx;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height:  88rpx;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+   background-color: $bgColor;
+  box-sizing:border-box;
+  padding-left: $gap;
+  padding-right: $gap; 
+}
+.icon-bianji{
+  font-size: 68rpx;
+   color: $primaryColor; 
+}
+
+ .publish-container{
+  width: $imgSm;
+  height: $imgSm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+/* 搜索组件容器 */
+.search-container{
+  flex: 1;
+}
+
+/*  博客列表容器 */
+.container {
+  margin-top: 80rpx;
+  box-sizing: border-box;
+  padding: $gap;
+}
+
+/*  博客卡片容器 */
+.blog-panel {
+  margin-bottom:  20rpx;
+  box-sizing: border-box;
+}
