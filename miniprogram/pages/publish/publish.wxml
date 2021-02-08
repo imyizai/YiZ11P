@@ -1,5 +1,5 @@
-<navigation-bar title="发布" colors="{{['#5B4B74','#b4BBb9']}}" direction="top">
-</navigation-bar>
+<!-- <navigation title="发布" colors="{{['#5B4B74','#b4BBb9']}}" direction="top">
+</navigation> -->
 
 <view class="container">
  <textarea class="content" placeholder="分享新鲜事..." bindinput="onInput"
@@ -25,7 +25,7 @@
 
 <view class="footer" style="bottom:{{footerBottom}}rpx">
   <text class="words-num">{{wordsNum}}</text>
-  <button class="send-btn">发布</button>
+  <button class="send-btn" bind:tap="send">发布</button>
 </view>
 
 
