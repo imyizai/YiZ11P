@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import '..\\..\\global.scss';
 
 .header{
   margin-top: 175rpx;
@@ -34,7 +34,7 @@
 
 /*  博客列表容器 */
 .container {
-  margin-top: 80rpx;
+  margin-top: 250rpx;
   box-sizing: border-box;
   padding: $gap;
 }

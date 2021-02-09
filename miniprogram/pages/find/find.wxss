@@ -1,0 +1,50 @@
+@charset "UTF-8";
+page {
+  background-color: #ededed;
+}
+
+.header {
+  margin-top: 175rpx;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.icon-bianji {
+  font-size: 68rpx;
+  color: #4B4B4B;
+}
+
+.publish-container {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 搜索组件容器 */
+.search-container {
+  flex: 1;
+}
+
+/*  博客列表容器 */
+.container {
+  margin-top: 250rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+/*  博客卡片容器 */
+.blog-panel {
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}

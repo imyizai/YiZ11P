@@ -1,5 +1,5 @@
 /* 引入全局scss */
-@import  "../../global.scss";
+@import  "..\\..\\global.scss";
 
 /* 外部容器*/
 .blog{
@@ -31,7 +31,7 @@
 
 .blog-time {
   font-size: $secondarySize;
-  color: $secondearyColor;
+  color: $secondaryColor;
 }
 
 /* 博客内容 */

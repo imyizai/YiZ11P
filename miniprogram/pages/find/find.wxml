@@ -7,18 +7,19 @@
     <i class="iconfont icon-bianji"></i>
   </view>
   <view class="search-container">
-    <yz-search />
+    <yz-search  bind:search="onSearch"/>
   </view>
 </view>
 
 <!-- 博客卡片列表 -->
-<view class="container">
+<scroll-view class="container">
   <block wx:for="{{blogList}}" wx:key="_id">
     <view class="blog-panel">
-      <yz-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goComment" />
+      <yz-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goDetail" />
+      <yz-blog-ctrl blogId="{{item._id}}" blog="{{item}}" />
     </view>
   </block>
-</view>
+</scroll-view>
 
 
   <!-- 底部弹出层-->
