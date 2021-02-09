@@ -1,8 +1,9 @@
 {
   "usingComponents": {
     "yz-search":"/components/search/search",
-    "yz--login":"/components/login/login",
+    "yz-login":"/components/login/login",
     "yz-blog-card":"/components/blog-card/blog-card"
+
   },
   "enablePullDownRefresh": true
 }

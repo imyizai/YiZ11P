@@ -28,5 +28,5 @@
 </block>
 </view>
 </view>
-
+<yz-blog-ctrl blogId="{{item._id}}" blog="{{item}}" />
 
